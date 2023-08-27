@@ -116,7 +116,7 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }
                         } else if (entradas == 2) {
                             printf("São um casal? (s/n)\n");
-                            scanf(" %c", &casal); // Coloquei espaço antes de %c para consumir a nova linha
+                            scanf(" %c", &casal); 
         
                             if (casal == 's' || casal == 'S') {
                                 printf("Vocês tem direito a meia entrada!\n");
