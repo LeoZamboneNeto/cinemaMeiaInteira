@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
 void calculo_dia_da_semana(int dia,int mes,int ano);
 
@@ -9,6 +10,8 @@ float valor;
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
+
     int d,m,a,teste;
     do{
         teste = 0;
@@ -40,8 +43,8 @@ system("Pause");
 }
 void calculo_dia_da_semana(int dia,int mes,int ano)
 {
-    
-    
+
+
     switch (mes)
     {
         case 1: break;
@@ -65,44 +68,51 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
 
              switch (dia % 7)
              {
-                case 0: printf("Segunda-feira, todos pagam meia entrada!\n Quantas entradas sao? "); 
+                case 0: printf("Segunda-feira, todos pagam meia entrada!\n Quantas entradas sao? ");
                         scanf("%d", &entradas);
                         valor = entradas * 0.5;
                         printf("Valor total: %.1f", valor);
                 break;
-                
+
                 case 1: printf("Terca-feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-                        
-                        if(entradas == 1){
+
+                        if(entradas >= 2){
+                            printf("Vocês não poderão pagar meia entrada.\n");
+                        }
+                        printf("\n");
+
+                        if (entradas == 1){
                         printf("Qual sua idade? \n");
                         scanf("%d",  &idade);
-                        
-                        if(idade <= 12 || idade >= 65){
-                            printf("Você tem direito a meia Entrada!");
+
+                        if (idade <= 12 || idade >= 65){
+                            printf("Você tem direito a meia Entrada!\n");
                         }else{
                             printf("Você é estudante? (s/n)");
                             scanf(" %c",  &estudante);
+
                             if(estudante == 's' || estudante == 'S'){
                                 printf("Você tem direito a meia entrada! ");
                             }else{
                                 printf("Você nao tem direito a meia entrada! ");
                             }
-                        }else {
-                          printf("Número de entradas inválido para esta operação.\n");
                         }
-                        printf("\n");
                         } break;
-                        
-                        
-                        
+
+
+
                 case 2: printf("Quarta-Feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-    
+
+                        if (entradas >= 3) {
+                            printf("Vocês não poderão pagar meia entrada.\n");
+                        }
+
                         if (entradas == 1) {
                             printf("Qual sua idade? \n");
                             scanf("%d", &idade);
-        
+
                        if (idade <= 12 || idade >= 65) {
                             printf("Você tem direito a meia Entrada!\n");
                             } else {
@@ -116,28 +126,26 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }
                         } else if (entradas == 2) {
                             printf("São um casal? (s/n)\n");
-                            scanf(" %c", &casal); 
-        
+                            scanf(" %c", &casal);
+
                             if (casal == 's' || casal == 'S') {
                                 printf("Vocês tem direito a meia entrada!\n");
                             } else {
                                 printf("Vocês nao tem direito a meia entrada!\n");
                             }
-                        } else {
-                            printf("Número de entradas inválido para esta operação.\n");
                         }
                         printf("\n");
                         break;
 
-                
-                
+
+
                 case 3: printf("Terca-feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-                        
+
                         if(entradas == 1){
                         printf("Qual sua idade? \n");
                         scanf("%d",  &idade);
-                        
+
                         if(idade <= 12 || idade >= 65){
                             printf("Você tem direito a meia Entrada!");
                         }else{
@@ -148,21 +156,21 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }else{
                                 printf("Você nao tem direito a meia entrada! ");
                             }
-                        }else {
-                          printf("Número de entradas inválido para esta operação.\n");
+                        }if (entradas >= 2) {
+                          printf("vocês não poderão pagar meia entrada.\n");
                         }
                         printf("\n");
-                        } break; 
-                        
-                        
-                        
+                        } break;
+
+
+
                 case 4: printf("Terca-feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-                        
+
                         if(entradas == 1){
                         printf("Qual sua idade? \n");
                         scanf("%d",  &idade);
-                        
+
                         if(idade <= 12 || idade >= 65){
                             printf("Você tem direito a meia Entrada!");
                         }else{
@@ -173,21 +181,21 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }else{
                                 printf("Você nao tem direito a meia entrada! ");
                             }
-                        }else {
-                          printf("Número de entradas inválido para esta operação.\n");
+                        }if (entradas >= 2) {
+                          printf("Vocês não poderão pagar meia entrada.\n");
                         }
                         printf("\n");
                         } break;
-               
-               
-               
+
+
+
                 case 5: printf("Terca-feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-                        
+
                         if(entradas == 1){
                         printf("Qual sua idade? \n");
                         scanf("%d",  &idade);
-                        
+
                         if(idade <= 12 || idade >= 65){
                             printf("Você tem direito a meia Entrada!");
                         }else{
@@ -198,21 +206,21 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }else{
                                 printf("Você nao tem direito a meia entrada! ");
                             }
-                        }else {
-                          printf("Número de entradas inválido para esta operação.\n");
+                        }if (entradas >= 2) {
+                          printf("Vocês não poderão pagar meia entrada.\n");
                         }
                         printf("\n");
                         } break;
-               
-               
-               
+
+
+
                 case 6: printf("Terca-feira, Quantas entradas sao?\n");
                         scanf("%d", &entradas);
-                        
+
                         if(entradas == 1){
                         printf("Qual sua idade? \n");
                         scanf("%d",  &idade);
-                        
+
                         if(idade <= 12 || idade >= 65){
                             printf("Você tem direito a meia Entrada!");
                         }else{
@@ -223,10 +231,10 @@ void calculo_dia_da_semana(int dia,int mes,int ano)
                             }else{
                                 printf("Você nao tem direito a meia entrada! ");
                             }
-                        }else {
-                          printf("Número de entradas inválido para esta operação.\n");
+                        }if (entradas >= 2) {
+                          printf("vocês não poderão pagar meia entrada.\n");
                         }
                         printf("\n");
                         } break;
              }
-}  
+}
